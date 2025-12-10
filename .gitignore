@@ -207,3 +207,20 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+quantumValut/.obsidian/workspace*
+quantumValut/.obsidian/app.json
+quantumValut/.obsidian/appearance.json
+quantumValut/.obsidian/core-plugins.json
+
+quantumValut/**/*.pdf
+
+quantumValut/.obsidian/plugins/*/
+!quantumValut/.obsidian/plugins/*/data.json
+
+quantumValut/.obsidian/themes/
+
+# System files
+.DS_Store
+Thumbs.db
