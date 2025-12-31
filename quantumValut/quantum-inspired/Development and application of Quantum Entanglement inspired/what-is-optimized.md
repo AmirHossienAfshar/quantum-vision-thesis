@@ -7,18 +7,18 @@
 **"When the paper mentions 'high-dependency optimization problems where variables are strongly dependent on one another,' what exactly are these 'variables'?"**
 
 In the context of:
-1. **Polynomial fitting**: `y = a₀ + a₁x + a₂x² + ... + aₙxⁿ`
-2. **Multi-feature regression**: `y = a₀ + a₁b₁ + a₂b₂ + ... + aₘbₘ`
+1. **Polynomial fitting**: $y = a₀ + a₁x + a₂x² + ... + aₙxⁿ$
+2. **Multi-feature regression**: $y = a₀ + a₁b₁ + a₂b₂ + ... + aₘbₘ$
 
 Are the "variables" referring to:
-- The **coefficients** (a₀, a₁, a₂, ...) that we're optimizing?
-- OR the **features/columns** (b₁, b₂, b₃, ...) in the dataset?
+- The **coefficients** ($a₀, a₁, a₂, ...$) that we're optimizing?
+- OR the **features/columns** ($b₁, b₂, b₃, ...$) in the dataset?
 
 ---
 
 ## ✅ **The Answer:**
 
-### **The "variables" are the COEFFICIENTS (a_i) being optimized, NOT the dataset features (b_j).**
+### **The "variables" are the COEFFICIENTS ($a_i$) being optimized, NOT the dataset features ($b_j$).**
 
 ---
 
@@ -26,10 +26,10 @@ Are the "variables" referring to:
 
 | Term | Definition | Example |
 |------|------------|---------|
-| **Optimization Variables** | The parameters that QEPSO searches for and optimizes | Coefficients: `[a₀, a₁, a₂, a₃, a₄, a₅]` |
-| **Problem Dimensions** | Number of optimization variables (n_dimensions in QEPSO) | `n_dimensions = 6` for degree-5 polynomial |
-| **Dataset Features** | The input columns (independent variables) in your CSV data | Columns: `[time]` or `[cement, water, age]` |
-| **Target Variable** | The output column (dependent variable) being predicted | Column: `[sales]` or `[strength]` |
+| **Optimization Variables** | The parameters that QEPSO searches for and optimizes | Coefficients: [$a₀, a₁, a₂, a₃, a₄, a₅$] |
+| **Problem Dimensions** | Number of optimization variables ($n_{dimensions}$ in QEPSO) | $n_{dimensions} = 6$ for degree-5 polynomial |
+| **Dataset Features** | The input columns (independent variables) in your CSV data | Columns: [$time$] or [$cement, water, age$] |
+| **Target Variable** | The output column (dependent variable) being predicted | Column: [$sales$] or [$strength$] |
 
 ---
 
@@ -42,15 +42,15 @@ Model:   sales = a₀ + a₁·time + a₂·time² + a₃·time³ + a₄·time⁴
 ```
 
 ### **What QEPSO Optimizes:**
-- **Optimization variables**: `[a₀, a₁, a₂, a₃, a₄, a₅]` ← **These are the "variables" in the paper**
+- **Optimization variables**: [$a₀, a₁, a₂, a₃, a₄, a₅$] ← **These are the "variables" in the paper**
 - **Dimensions**: 6
-- **Dataset feature**: `time` (NOT optimized, it's given input data)
+- **Dataset feature**: $time$ (NOT optimized, it's given input data)
 
 ### **Why is this high-dependency?**
-The optimization variables `[a₀, a₁, a₂, ...]` are **interdependent** because:
-- The features `time`, `time²`, `time³`, etc. are **highly correlated** with each other
-- Changing `a₅` affects the optimal value for `a₄`
-- You cannot optimize `a₃` independently from `a₂`
+The optimization variables [$a₀, a₁, a₂, ...$] are **interdependent** because:
+- The features $time, time², time³$, etc. are **highly correlated** with each other
+- Changing $a₅$ affects the optimal value for $a₄$
+- You cannot optimize $a₃$ independently from $a₂$
 - The fitness landscape has a narrow valley structure
 
 ### **Mathematical Insight:**
@@ -71,9 +71,9 @@ Model:   strength = a₀ + a₁·cement + a₂·water + a₃·age
 ```
 
 ### **What QEPSO Optimizes:**
-- **Optimization variables**: `[a₀, a₁, a₂, a₃]` ← **These are the "variables" in the paper**
+- **Optimization variables**: [$a₀, a₁, a₂, a₃$] ← **These are the "variables" in the paper**
 - **Dimensions**: 4
-- **Dataset features**: `[cement, water, age]` (NOT optimized, given input data)
+- **Dataset features**: [$cement, water, age$] (NOT optimized, given input data)
 
 ### **Dependency depends on feature correlation:**
 
@@ -83,7 +83,7 @@ correlation_matrix = dataset[['cement', 'water', 'age']].corr()
 # Result: low correlations (<0.3)
 ```
 - **Low-dependency problem**
-- Coefficients `a₁`, `a₂`, `a₃` can be optimized somewhat independently
+- Coefficients $a₁, a₂, a₃$ can be optimized somewhat independently
 - Standard PSO performs well
 - Fitness landscape is bowl-shaped (convex)
 
@@ -93,7 +93,7 @@ correlation_matrix = dataset[['cement', 'water', 'age']].corr()
 # Result: high correlation between cement and water (>0.8)
 ```
 - **High-dependency problem**
-- Coefficients `a₁` and `a₂` become **interdependent**
+- Coefficients $a₁$ and $a₂$ become **interdependent**
 - Standard PSO struggles
 - Fitness landscape has narrow valleys
 - This is where quantum entanglement helps!
@@ -138,12 +138,12 @@ Standard PSO struggles, QEPSO with entanglement excels
 ### **When presenting, clarify:**
 
 1. **"Variables" in optimization** = the model coefficients/parameters we're searching for
-   - In polynomial: `[a₀, a₁, a₂, ...]`
-   - In regression: `[a₀, a₁, a₂, ...]`
+   - In polynomial: [$a₀, a₁, a₂, ...$]
+   - In regression: [$a₀, a₁, a₂, ...$]
 
 2. **"Features" in dataset** = the input columns from CSV data
-   - In time series: `[time]`
-   - In regression: `[cement, water, age]`
+   - In time series: [$time$]
+   - In regression: [$cement, water, age$]
 
 3. **"High-dependency"** = when optimization variables are interdependent
    - Caused by correlation in dataset features

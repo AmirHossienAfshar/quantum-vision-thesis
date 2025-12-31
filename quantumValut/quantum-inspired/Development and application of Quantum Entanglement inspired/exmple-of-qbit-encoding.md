@@ -34,10 +34,11 @@ x_D^1 & x_D^2 & \dots & x_D^n
 \end{bmatrix}
 $$
 
+
 ### Meaning:
 
 * $x_d^k \in {0,1}$
-* **Row index (d)** → dimension number
+	* **Row index (d)** → dimension number
 * **Column index (k)** → bit position
 * **n = total number of Q-bits per dimension**
 
