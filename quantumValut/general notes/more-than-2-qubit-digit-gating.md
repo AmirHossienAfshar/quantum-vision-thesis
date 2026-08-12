@@ -7,7 +7,7 @@
 
 ---
 
-# 🧩 **Example to confirm**
+# **Example to confirm**
 
 Suppose you build:
 
@@ -43,7 +43,7 @@ $$
 
 ---
 
-# 🔥 **This generalizes to any number of qubits**
+# **This generalizes to any number of qubits**
 
 For 3 qubits:
 
@@ -70,7 +70,7 @@ means each qubit gets its own gate independently.
 
 ---
 
-# ❗ But keep in mind
+# But keep in mind
 
 Only **independent** multi-qubit gates are tensor products.
 

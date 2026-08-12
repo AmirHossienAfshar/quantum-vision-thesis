@@ -1,8 +1,8 @@
-# 📝 **Clarification Note: Variables vs. Features in Optimization**
+#  **Clarification Note: Variables vs. Features in Optimization**
 
 ---
 
-## ❓ **The Question:**
+##  **The Question:**
 
 **"When the paper mentions 'high-dependency optimization problems where variables are strongly dependent on one another,' what exactly are these 'variables'?"**
 
@@ -16,13 +16,13 @@ Are the "variables" referring to:
 
 ---
 
-## ✅ **The Answer:**
+##  **The Answer:**
 
 ### **The "variables" are the COEFFICIENTS ($a_i$) being optimized, NOT the dataset features ($b_j$).**
 
 ---
 
-## 🎯 **Clear Definitions:**
+##  **Clear Definitions:**
 
 | Term | Definition | Example |
 |------|------------|---------|
@@ -33,7 +33,7 @@ Are the "variables" referring to:
 
 ---
 
-## 📊 **Example 1: Polynomial Time Series**
+## **Example 1: Polynomial Time Series**
 
 ### **Setup:**
 ```
@@ -62,7 +62,7 @@ correlation_matrix = np.corrcoef([time, time², time³, time⁴, time⁵])
 
 ---
 
-## 📊 **Example 2: Multi-Feature Regression**
+## **Example 2: Multi-Feature Regression**
 
 ### **Setup:**
 ```
@@ -100,7 +100,7 @@ correlation_matrix = dataset[['cement', 'water', 'age']].corr()
 
 ---
 
-## 🔑 **Key Insight:**
+## **Key Insight:**
 
 ### **Feature correlation in the dataset → creates variable dependency in optimization**
 
@@ -116,7 +116,7 @@ Standard PSO struggles, QEPSO with entanglement excels
 
 ---
 
-## 💡 **Why Does This Matter for QEPSO?**
+## **Why Does This Matter for QEPSO?**
 
 ### **Standard PSO Assumption:**
 - Each particle dimension can be explored somewhat independently
@@ -131,32 +131,10 @@ Standard PSO struggles, QEPSO with entanglement excels
 - **Ordered entanglement**: synchronizes bit positions across dimensions
 - Both mechanisms help particles explore interdependent variable spaces more effectively
 
----
-
-## 📋 **Summary for Presentation:**
-
-### **When presenting, clarify:**
-
-1. **"Variables" in optimization** = the model coefficients/parameters we're searching for
-   - In polynomial: [$a₀, a₁, a₂, ...$]
-   - In regression: [$a₀, a₁, a₂, ...$]
-
-2. **"Features" in dataset** = the input columns from CSV data
-   - In time series: [$time$]
-   - In regression: [$cement, water, age$]
-
-3. **"High-dependency"** = when optimization variables are interdependent
-   - Caused by correlation in dataset features
-   - Makes optimization landscape difficult (narrow valleys)
-   - Standard PSO struggles, QEPSO excels
-
-4. **"Dimensions in QEPSO"** = number of optimization variables
-   - For degree-5 polynomial: 6 dimensions
-   - For 10-feature regression: 11 dimensions (10 weights + 1 bias)
 
 ---
 
-## 🎯 **Quick Reference:**
+## **Quick Reference:**
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -177,8 +155,3 @@ Standard PSO struggles, QEPSO with entanglement excels
 └─────────────────────────────────────────────────────────────┘
 ```
 
----
-
-## ✅ **Final Statement:**
-
-**"In QEPSO optimization, the 'variables' refer to the model coefficients (parameters) being optimized, not the dataset features. High-dependency occurs when these coefficients become interdependent due to correlation in the input features, creating a challenging optimization landscape where quantum entanglement provides significant advantages."**
