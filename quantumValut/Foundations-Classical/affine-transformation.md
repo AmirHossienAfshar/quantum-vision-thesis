@@ -1,13 +1,20 @@
 ---
 tags: [classical-cv, transformations, foundations]
 status: foundation
-related: [[homography]], [[RANSAC]], [[feature-matching-SIFT-ORB]]
+related:
+  - "[[transformations-overview]]"
+  - "[[linear-transformation]]"
+  - "[[projective-transformation]]"
+  - "[[RANSAC]]"
+  - "[[feature-matching-SIFT-ORB]]"
 ---
 
 # Affine Transformation
 
 ## One-line definition
 A 2D transformation that maps points using a linear transformation plus a translation, and **always preserves parallel lines**.
+
+> Where this fits in the bigger picture — filtering vs. warping, and the full Linear → Affine → Projective naming hierarchy — now lives in [[transformations-overview]]. Short version: this note picks up exactly where [[linear-transformation]] leaves off, adding the one capability a bare 2×2 matrix structurally cannot have — translation.
 
 ## The math
 
@@ -20,7 +27,7 @@ $$
 \begin{bmatrix} t_x \\ t_y \end{bmatrix}
 $$
 
-Or, in the common **homogeneous coordinates** form (this is the form that matters — it's what makes affine a special case of [[homography]]):
+Or, in the common **homogeneous coordinates** form (this is the form that matters — it's what makes affine a special case of [[projective-transformation]]):
 
 $$
 \begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} =
@@ -61,7 +68,7 @@ The $t_x, t_y$ terms get pulled in *because* they're multiplied against that fix
 **So why is the bottom row specifically $[0, 0, 1]$, and not something else?** Two separate reasons, worth keeping distinct:
 
 1. **The two zeros** ($0, 0$) exist so that $x$ and $y$ don't get mixed into the third output coordinate. Multiplying the bottom row against the input gives $0 \cdot x + 0 \cdot y + 1 \cdot 1 = 1$ — meaning the third coordinate of the output is *always exactly 1 again*, preserving the "point padded with a 1" format so the result can be fed right back into another transform (chaining) or reinterpreted as an ordinary 2D point $(x', y')$ with nothing further to do.
-2. **This is precisely the constraint that homography removes.** [[homography]] replaces that bottom row with $[h_{31}, h_{32}, h_{33}]$ — general, non-zero values. That means the third output coordinate is no longer a guaranteed $1$; it becomes $w' = h_{31}x + h_{32}y + h_{33}$, a value that *depends on where the point is*. Recovering the real 2D point then requires dividing through: $x_{final} = x'/w'$. That position-dependent division is exactly the mechanism that creates perspective convergence — and it's completely absent here because affine's bottom row is frozen at $[0,0,1]$, which forces $w'=1$ everywhere, so the division always does nothing.
+2. **This is precisely the constraint that homography removes.** [[projective-transformation]] replaces that bottom row with $[h_{31}, h_{32}, h_{33}]$ — general, non-zero values. That means the third output coordinate is no longer a guaranteed $1$; it becomes $w' = h_{31}x + h_{32}y + h_{33}$, a value that *depends on where the point is*. Recovering the real 2D point then requires dividing through: $x_{final} = x'/w'$. That position-dependent division is exactly the mechanism that creates perspective convergence — and it's completely absent here because affine's bottom row is frozen at $[0,0,1]$, which forces $w'=1$ everywhere, so the division always does nothing.
 
 **One-sentence summary to remember:** the 3×3 form with $[0,0,1]$ on the bottom exists purely to let translation ride along inside ordinary matrix multiplication (via the padded $1$), and the frozen bottom row is exactly the thing that later gets "unfrozen" to produce homography's extra perspective power.
 
@@ -250,21 +257,14 @@ This is the important boundary to remember: **affine transforms cannot represent
 
 The bottom row of the matrix is always fixed at $[0, 0, 1]$. That fixed bottom row is *exactly* why parallel lines in the input always stay parallel in the output — there's no mechanism in the matrix for lines to converge toward a vanishing point.
 
-> This is the single fact that separates affine from [[homography]]. Homography frees up that bottom row, which is what allows convergence (perspective effects) to appear.
+> This is the single fact that separates affine from [[projective-transformation]]. Homography frees up that bottom row, which is what allows convergence (perspective effects) to appear.
 
 ## Visual intuition
 
-- Take a square. Apply affine transforms → you can get any parallelogram (rotated, stretched, skewed, shifted) — but it will **never** look like a tilted rectangle viewed at an angle (a trapezoid shape). That trapezoid effect requires [[homography]].
+- Take a square. Apply affine transforms → you can get any parallelogram (rotated, stretched, skewed, shifted) — but it will **never** look like a tilted rectangle viewed at an angle (a trapezoid shape). That trapezoid effect requires [[projective-transformation]].
 - Real-world scenario where affine is the *correct* model (not an approximation): a flatbed scanner, or a satellite/orthographic view where the camera is effectively infinitely far away and looking straight down — no perspective convergence happens.
 - Real-world scenario where affine is an *approximation* that breaks: a handheld photo of a book on a table taken at an angle. This needs full homography.
 
-## Degrees of freedom cheat sheet
+## Degrees of freedom, in context
 
-| Transform | DOF | Preserves |
-|---|---|---|
-| Translation | 2 | orientation, shape, size |
-| Rigid (translation + rotation) | 3 | shape, size |
-| Similarity (+ uniform scale) | 4 | shape, angles |
-| **Affine** | **6** | **parallelism** |
-| **Homography** | **8** | **straight lines only** |
-
+Affine sits at **6 DOF**, exactly 2 more than [[linear-transformation]]'s 4 (the two extra being $t_x, t_y$), and exactly 2 fewer than [[projective-transformation]]'s 8. Full comparison table across every tier lives in [[transformations-overview]].
