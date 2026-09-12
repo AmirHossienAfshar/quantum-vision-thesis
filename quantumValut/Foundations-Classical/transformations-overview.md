@@ -9,7 +9,6 @@ related:
   - "[[feature-matching-SIFT-ORB]]"
 ---
 
-
 # Transformations — Bird's-Eye View
 
 > This note is the map. It doesn't derive any matrix in detail — [[linear-transformation]], [[affine-transformation]], and [[projective-transformation]] each do that for their own case. This note exists to show how they relate to each other and to the bigger picture of "what is an image operation."
@@ -40,11 +39,13 @@ Worth remembering as a mental checkpoint when reading other notes: [[normalized-
 
 **Is a 2×2 transformation called "affine"? No** — it has its own, separate name, and the distinction matters, both mathematically and for getting vocabulary right in front of my professor.
 
-| Matrix form | Name | DOF | What it can do | Fixes the origin? |
-|---|---|---|---|---|
-| $2\times 2$, applied alone (no added translation) | **Linear transformation** | 4 | rotation, scaling, shear, reflection | **Yes** — always maps $(0,0) \to (0,0)$ |
-| $2\times 2$ **+ a separate translation vector**, or equivalently a $3\times3$ homogeneous matrix with bottom row fixed at $[0,0,1]$ | **Affine transformation** | 6 | everything linear can do, **plus** translation | No |
-| $3\times 3$ homogeneous matrix, **bottom row free** ($[h_{31}, h_{32}, h_{33}]$, not fixed) | **Projective transformation** (a.k.a. **homography**) | 8 | everything affine can do, **plus** perspective convergence | No |
+Straight out of the course's own "Projective Transformation" slide, the properties in the last three columns are worth tracking explicitly across every tier, since they're exactly what changes (and doesn't) as you move up the hierarchy:
+
+| Transform | Matrix form | DOF | What it can do | Straight lines stay straight? | Parallel lines stay parallel? | Origin maps to origin? | Note page |
+|---|---|---|---|---|---|---|---|
+| **Linear** | $2\times 2$, applied alone (no added translation) | 4 | rotation, scaling, shear, reflection | Yes | Yes | **Yes, always** | [[linear-transformation]] |
+| **Affine** | $2\times 2$ **+ a separate translation vector**, or equivalently a $3\times3$ homogeneous matrix with bottom row fixed at $[0,0,1]$ | 6 | everything linear can do, **plus** translation | Yes | **Yes** | No | [[affine-transformation]] |
+| **Projective / Homography** | $3\times 3$ homogeneous matrix, **bottom row free** ($[h_{31}, h_{32}, h_{33}]$, not fixed) | 8 | everything affine can do, **plus** perspective convergence | **Yes** | **Not necessarily** | **Not necessarily** | [[projective-transformation]] |
 
 A few things worth being explicit about, since the names encode real mathematical containment, not just vocabulary:
 
@@ -52,14 +53,4 @@ A few things worth being explicit about, since the names encode real mathematica
 - **Affine transformations are a strict subset of projective ones.** Set the bottom row to $[0,0,1]$ in a general 3×3 projective matrix and it collapses into an affine transform — see [[affine-transformation]] and [[projective-transformation]] for the mechanics of that boundary.
 - So the containment chain is: **Linear $\subset$ Affine $\subset$ Projective**. Each step widens what's allowed by unfreezing exactly one more constraint (first "must fix the origin," then "bottom row must be $[0,0,1]$").
 - The course's phrase **"3×3 transformations are called projective transformations"** is really shorthand for "a fully general 3×3 homogeneous matrix, with no constraints on the bottom row." Both affine and linear transforms *can* be written in 3×3 homogeneous form too, but they're special/constrained cases of that general 3×3 form, not what the name "projective" refers to on its own. The name is reserved for the unconstrained version — the one that actually needs that bottom row to do something.
-
-## Degrees of freedom, all in one place
-
-| Transform | DOF | Preserves | Note page |
-|---|---|---|---|
-| Linear | 4 | origin, angles between basis vectors change only via scale/shear | [[linear-transformation]] |
-| Translation only | 2 | orientation, shape, size | — |
-| Rigid (translation + rotation) | 3 | shape, size | — |
-| Similarity (+ uniform scale) | 4 | shape, angles | — |
-| **Affine** | **6** | **parallelism** | [[affine-transformation]] |
-| **Projective / Homography** | **8** | **straight lines only** | [[projective-transformation]] |
+- The two properties that actually change as you go from affine to projective are the interesting ones to remember: **straightness survives every single tier** (it's the one thing that never breaks, all the way up to full projective — a huge reason lines are the natural feature to match on in [[feature-matching-SIFT-ORB]] / [[RANSAC]]-style pipelines), but **parallelism only survives through affine** and is exactly what projective is willing to sacrifice in exchange for representing perspective convergence. See [[projective-transformation]] for the full worked explanation of *why* parallel lines stop being preserved — it's the same $w'$-division mechanism covered there.

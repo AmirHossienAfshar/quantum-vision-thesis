@@ -37,6 +37,28 @@ $$
 
 **6 free parameters**: $a, b, c, d, t_x, t_y$.
 
+## Homogeneous Coordinates — the formal definition
+
+The earlier sections used the padded-$(x,y,1)$ trick without formally defining what homogeneous coordinates actually *are*. Worth doing properly, since it's a genuinely general concept (used well beyond just affine transforms), and it's what makes the "up to scale" language in [[projective-transformation]] make real sense later rather than sounding like a throwaway remark.
+
+**The formal definition** (this is from Shree K. Nayar's *First Principles of Computer Vision* course): the homogeneous representation of a 2D point $\mathbf{p} = (x, y)$ is a **3D point** $\tilde{\mathbf{p}} = (\tilde x, \tilde y, \tilde z)$, where the third coordinate $\tilde z \neq 0$ is **fictitious** — it doesn't correspond to any real physical dimension, it's purely a bookkeeping device — such that:
+
+$$
+x = \frac{\tilde x}{\tilde z}, \qquad y = \frac{\tilde y}{\tilde z}
+$$
+
+**The key idea — this is an equivalence class, not a single representation:**
+
+$$
+\mathbf{p} \equiv \begin{bmatrix} x \\ y \\ 1 \end{bmatrix} \equiv \begin{bmatrix} \tilde z x \\ \tilde z y \\ \tilde z \end{bmatrix} \equiv \begin{bmatrix} \tilde x \\ \tilde y \\ \tilde z \end{bmatrix} = \tilde{\mathbf{p}}
+$$
+
+In plain words: **every scalar multiple of a homogeneous coordinate represents the exact same 2D point.** $(2, 4, 2)$, $(3, 6, 3)$, and $(1, 2, 1)$ all represent the single 2D point $(1, 2)$, because dividing each by its own third coordinate recovers $(1,2)$ every time. 
+
+**Geometric picture:** think of the 3D point $\tilde{\mathbf{p}}=(\tilde x, \tilde y, \tilde z)$ as sitting somewhere on a line $L$ that passes through the origin. **Every point on that line except the origin itself** represents the *same* 2D point $\mathbf{p}$ — because every point on a line through the origin is some scalar multiple of every other point on it, and scalar multiples are exactly what the equivalence class above says don't matter. To recover the actual, concrete 2D coordinates, you intersect line $L$ with the plane $\tilde z = 1$ — that intersection point is exactly $(x, y, 1)$, the normalized representative this whole vault has been using directly. This is a genuinely useful mental image: a 2D point isn't one 3D point, it's an entire ray of them, and $(x,y,1)$ is just where that ray happens to cross the convenient reference plane.
+
+**Why "fictitious" is the right word for $\tilde z$:** it isn't measuring anything real (not a depth, not a height) — it only exists to make the representation *homogeneous*, meaning every coordinate scales together consistently, which is precisely the property that lets a single matrix multiplication represent translation (covered next) and, more generally, is exactly the same "defined up to overall scale" property [[projective-transformation]] relies on when it says a homography has 9 matrix entries but only 8 independent parameters — that scale ambiguity is this equivalence class, just applied to the transformation matrix instead of to a point.
+
 ## Why a 3×3 matrix at all? Why the $[0,0,1]$ bottom row?
 
 This is worth being precise about, because it's the single idea that makes everything downstream (RANSAC, homography, chaining transforms) work cleanly.
