@@ -4,6 +4,7 @@ status: foundation
 related:
   - "[[quantum-hamiltonian]]"
   - "[[ising-model-and-qubo]]"
+  - "[[qaoa-explained]]"
   - "[[quantum-annealing-overview]]"
   - "[[adiabatic-theorem]]"
   - "[[annealing-hardware-details]]"
