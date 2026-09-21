@@ -9,39 +9,33 @@ doi: 10.1103/PRXQuantum.3.030101
 tags: [quantum-machine-learning, quantum-advantage, perspective, meta-science]
 ---
 
-# About this paper
+## One-line thesis
+Machine learning may be one of the *hardest* domains in which to prove a real quantum advantage, because classical ML is already extremely strong and messy/unstructured, while the proof tools quantum computing has (asymptotic speed-ups on structured problems) don't transfer well to it — the field should consider research questions other than "does quantum beat classical."
 
-## Core question
-Should "beating classical machine learning" (i.e. quantum advantage) be the main
-goal driving quantum machine learning (QML) research?
+## Table I — Quantum-friendly problems vs. real ML problems
 
-## One-line answer
-No — not right now. The tools we currently have to *prove* advantage are too
-limited for a field as messy as ML, and treating advantage as the only valid
-outcome biases and narrows the field. There are other legitimate, valuable
-research questions to ask instead.
+| Property | Problems QC is typically good at | Problems ML actually solves |
+|---|---|---|
+| Classical performance | Low (chosen to be classically hard) | High (industrial-scale, near-linear time algorithms) |
+| Input size | Small (limited by near-term qubit counts) | Huge (millions of parameters/entries) |
+| Problem structure | Highly structured / periodic (exploitable via interference) | "Messy," human-domain, hard to formalize |
+| Theoretical accessibility | High (chosen *because* we can reason about them) | Shifting (deep learning is upending theory) |
+| Evaluating performance | Computational complexity / asymptotic scaling | Empirical benchmarks |
 
-## Why the authors think this pairing is odd
-- **Classical ML** is astonishingly powerful in practice, but theoretically
-  hard to explain (especially deep learning — see [[1-why-ml-is-a-hard-target-for-quantum]]).
-- **Quantum computing** has no large-scale practical benchmarks yet — theory
-  is the *only* tool we currently have to judge relevance to a problem.
-- So QML research is trying to use weak/limited theoretical tools to beat an
-  empirically-dominant, theoretically-mysterious opponent.
 
-## Structure of the paper
+## Five concrete reasons ML is a uniquely hard QML target
+1. ML baselines are already extremely strong in practice.
+2. Real ML inputs are huge — hard to load onto near-term quantum hardware.
+3. Real-world data is "messy" — not the clean, structured problems quantum
+   algorithms are usually designed around.
+4. ML theory itself is currently being rewritten (deep learning), so there's
+   no stable ground truth to benchmark quantum methods against.
+5. We have very few reliable ways to empirically benchmark QML models at
+   realistic problem scales.
 
-| Section | Content |
-|---|---|
-| II | Why ML is a uniquely hard target for quantum speed-ups |
-| III | Critique of how "quantum advantage" is currently investigated |
-| IV | Three examples of alternative, non-advantage research framings |
-| V | Call for a field-wide paradigm shift |
+## Structure covered in these notes
+This vault section covers **Sections I–III** of the paper only (the "problem" half):
+- Section II — why machine learning is a fundamentally hard target for quantum speedup claims
+- Section III — a critical dissection of how "quantum advantage" claims are currently made, and why the authors think they're structurally weak
 
-## My notes on this paper
-- [[1-why-ml-is-a-hard-target-for-quantum]] — Section II
-- [[2-critique-of-the-advantage-narrative]] — Section III
-- [[3-quantum-perceptrons-as-building-blocks]] — Section IV.A
-- [[4-quantum-kernels-as-theory-bridge]] — Section IV.B
-- [[5-quantum-gradients-and-software-readiness]] — Section IV.C
-- [[6-moving-forward-implications]] — Section V
+**Not covered here:** Section IV (the paper's constructive half — quantum perceptrons, quantum kernels, quantum gradients as examples of advantage-agnostic research) and Section V (moving forward / conclusion). Add separate notes for those if revisited later.
