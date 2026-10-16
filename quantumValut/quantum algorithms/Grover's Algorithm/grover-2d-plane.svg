@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" width="680" height="400" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+<title>Grover plane: one iteration</title>
+<desc>Unit circle with the unmarked state on the horizontal axis and the marked state on the vertical axis. s starts at angle theta, the oracle reflects it to minus theta, diffusion reflects it across the s line to 3 theta.</desc>
+<defs><marker id="ax" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="ap" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="aa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker><marker id="ad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect x="0" y="0" width="680" height="400" rx="12" fill="#FAFAF7" stroke="#D3D1C7" stroke-width="1"/>
+<path d="M404.5 365.0 A190 190 0 1 0 50 270" fill="none" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="3 4"/>
+<line x1="60" y1="270" x2="440" y2="270" stroke="#5F5E5A" stroke-width="1.2" marker-end="url(#ax)"/>
+<line x1="240" y1="270" x2="240" y2="84" stroke="#5F5E5A" stroke-width="1.2" marker-end="url(#ax)"/>
+<line x1="62.3" y1="337.2" x2="240" y2="270" stroke="#534AB7" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/>
+<line x1="417.7" y1="202.8" x2="417.7" y2="337.2" stroke="#888780" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="417.7" y1="337.2" x2="328.9" y2="102.1" stroke="#888780" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="240" y1="270" x2="414.9" y2="203.9" stroke="#534AB7" stroke-width="2.5" marker-end="url(#ap)"/>
+<line x1="240" y1="270" x2="414.9" y2="336.1" stroke="#888780" stroke-width="2" marker-end="url(#ag)"/>
+<line x1="240" y1="270" x2="327.5" y2="104.7" stroke="#BA7517" stroke-width="3" marker-end="url(#aa)"/>
+<path d="M300.0 270.0 A60 60 0 0 0 296.1 248.8" fill="none" stroke="#5F5E5A" stroke-width="1"/>
+<path d="M300.0 270.0 A60 60 0 0 1 296.1 291.2" fill="none" stroke="#5F5E5A" stroke-width="1"/>
+<path d="M340.0 270.0 A100 100 0 0 0 286.8 181.6" fill="none" stroke="#BA7517" stroke-width="1"/>
+<text x="312" y="262" font-size="12" font-weight="400" text-anchor="start" fill="#2C2C2A">θ</text>
+<text x="312" y="287" font-size="12" font-weight="400" text-anchor="start" fill="#2C2C2A">−θ</text>
+<text x="292" y="212" font-size="12" font-weight="400" text-anchor="start" fill="#2C2C2A">3θ</text>
+<text x="240" y="66" font-size="14" font-weight="600" text-anchor="middle" fill="#2C2C2A">|w⟩ marked state</text>
+<text x="446" y="274" font-size="14" font-weight="600" text-anchor="start" fill="#2C2C2A">|w⊥⟩</text>
+<text x="446" y="290" font-size="12" font-weight="400" text-anchor="start" fill="#2C2C2A">all unmarked</text>
+<text x="426" y="200" font-size="14" font-weight="600" text-anchor="start" fill="#2C2C2A">|s⟩ start</text>
+<text x="426" y="341" font-size="14" font-weight="600" text-anchor="start" fill="#2C2C2A">O|s⟩ after oracle</text>
+<text x="338" y="98" font-size="14" font-weight="600" text-anchor="start" fill="#2C2C2A">G|s⟩ after one round</text>
+<text x="60" y="290" font-size="12" font-weight="400" text-anchor="start" fill="#2C2C2A">O's mirror: this axis</text>
+<text x="48" y="358" font-size="12" font-weight="400" text-anchor="start" fill="#2C2C2A">D's mirror: line through |s⟩</text>
+<text x="20" y="386" font-size="12" font-weight="400" text-anchor="start" fill="#2C2C2A">Example: N = 8, θ ≈ 20.7°. One round moves the state from θ to 3θ (a rotation by 2θ).</text>
+</svg>

@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+<title>Grover N=8 amplitudes through two rounds</title>
+<desc>Five bar charts of the eight amplitudes (units of c) for marked item 101: start, then oracle and diffusion for each of two rounds. Mean line shown dashed.</desc>
+<defs><marker id="ad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect x="0" y="0" width="900" height="560" rx="12" fill="#FAFAF7" stroke="#D3D1C7" stroke-width="1"/>
+<rect x="20" y="15" width="280" height="255" rx="8" fill="none" stroke="#D3D1C7" stroke-width="1"/>
+<text x="32" y="37" font-size="14" font-weight="600" text-anchor="start" fill="#2C2C2A">Start</text>
+<text x="32" y="55" font-size="12" font-weight="400" text-anchor="start" fill="#5F5E5A">mean = 4c   P(101) = 12.5%</text>
+<rect x="32" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="44" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<rect x="65" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="77" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<rect x="98" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="110" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<rect x="131" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="143" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<rect x="164" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="176" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<rect x="197" y="139.0" width="24" height="36.0" rx="2" fill="#EF9F27" opacity="1"/>
+<text x="209" y="134.0" font-size="11" font-weight="600" text-anchor="middle" fill="#2C2C2A">4</text>
+<rect x="230" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="242" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<rect x="263" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="275" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<line x1="28" y1="175" x2="292" y2="175" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="28" y1="139.0" x2="292" y2="139.0" stroke="#D85A30" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="160" y="263" font-size="11" font-weight="400" text-anchor="middle" fill="#5F5E5A">Uniform: every amplitude is 4</text>
+<rect x="315" y="15" width="280" height="255" rx="8" fill="none" stroke="#D3D1C7" stroke-width="1"/>
+<text x="327" y="37" font-size="14" font-weight="600" text-anchor="start" fill="#2C2C2A">Round 1: oracle</text>
+<text x="327" y="55" font-size="12" font-weight="400" text-anchor="start" fill="#5F5E5A">mean = 3c   P(101) = 12.5%</text>
+<rect x="327" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="339" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<rect x="360" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="372" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<rect x="393" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="405" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<rect x="426" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="438" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<rect x="459" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="471" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<rect x="492" y="175.0" width="24" height="36.0" rx="2" fill="#EF9F27" opacity="1"/>
+<text x="504" y="224.0" font-size="11" font-weight="600" text-anchor="middle" fill="#2C2C2A">−4</text>
+<rect x="525" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="537" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<rect x="558" y="139.0" width="24" height="36.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="570" y="134.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">4</text>
+<line x1="323" y1="175" x2="587" y2="175" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="323" y1="148.0" x2="587" y2="148.0" stroke="#D85A30" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="455" y="263" font-size="11" font-weight="400" text-anchor="middle" fill="#5F5E5A">Sign of 101 flips</text>
+<rect x="610" y="15" width="280" height="255" rx="8" fill="none" stroke="#D3D1C7" stroke-width="1"/>
+<text x="622" y="37" font-size="14" font-weight="600" text-anchor="start" fill="#2C2C2A">Round 1: diffusion</text>
+<text x="622" y="55" font-size="12" font-weight="400" text-anchor="start" fill="#5F5E5A">mean = 3c   P(101) = 78.1%</text>
+<rect x="622" y="139.0" width="24" height="36.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="655" y="139.0" width="24" height="36.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="688" y="139.0" width="24" height="36.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="721" y="139.0" width="24" height="36.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="754" y="139.0" width="24" height="36.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="787" y="175.0" width="24" height="36.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="820" y="139.0" width="24" height="36.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="853" y="139.0" width="24" height="36.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="622" y="157.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="634" y="152.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<rect x="655" y="157.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="667" y="152.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<rect x="688" y="157.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="700" y="152.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<rect x="721" y="157.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="733" y="152.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<rect x="754" y="157.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="766" y="152.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<rect x="787" y="85.0" width="24" height="90.0" rx="2" fill="#EF9F27" opacity="1"/>
+<text x="799" y="80.0" font-size="11" font-weight="600" text-anchor="middle" fill="#2C2C2A">10</text>
+<rect x="820" y="157.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="832" y="152.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<rect x="853" y="157.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="865" y="152.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<line x1="618" y1="175" x2="882" y2="175" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="618" y1="148.0" x2="882" y2="148.0" stroke="#D85A30" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="750" y="263" font-size="11" font-weight="400" text-anchor="middle" fill="#5F5E5A">Reflect through the mean</text>
+<rect x="20" y="285" width="280" height="255" rx="8" fill="none" stroke="#D3D1C7" stroke-width="1"/>
+<text x="32" y="307" font-size="14" font-weight="600" text-anchor="start" fill="#2C2C2A">Round 2: oracle</text>
+<text x="32" y="325" font-size="12" font-weight="400" text-anchor="start" fill="#5F5E5A">mean = 0.5c   P(101) = 78.1%</text>
+<rect x="32" y="427.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="44" y="422.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<rect x="65" y="427.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="77" y="422.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<rect x="98" y="427.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="110" y="422.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<rect x="131" y="427.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="143" y="422.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<rect x="164" y="427.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="176" y="422.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<rect x="197" y="445.0" width="24" height="90.0" rx="2" fill="#EF9F27" opacity="1"/>
+<text x="209" y="548.0" font-size="11" font-weight="600" text-anchor="middle" fill="#2C2C2A">−10</text>
+<rect x="230" y="427.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="242" y="422.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<rect x="263" y="427.0" width="24" height="18.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="275" y="422.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">2</text>
+<line x1="28" y1="445" x2="292" y2="445" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="28" y1="440.5" x2="292" y2="440.5" stroke="#D85A30" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="160" y="533" font-size="11" font-weight="400" text-anchor="middle" fill="#5F5E5A">Sign of 101 flips again</text>
+<rect x="315" y="285" width="280" height="255" rx="8" fill="none" stroke="#D3D1C7" stroke-width="1"/>
+<text x="327" y="307" font-size="14" font-weight="600" text-anchor="start" fill="#2C2C2A">Round 2: diffusion</text>
+<text x="327" y="325" font-size="12" font-weight="400" text-anchor="start" fill="#5F5E5A">mean = 0.5c   P(101) = 94.5%</text>
+<rect x="327" y="427.0" width="24" height="18.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="360" y="427.0" width="24" height="18.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="393" y="427.0" width="24" height="18.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="426" y="427.0" width="24" height="18.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="459" y="427.0" width="24" height="18.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="492" y="445.0" width="24" height="90.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="525" y="427.0" width="24" height="18.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="558" y="427.0" width="24" height="18.0" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<rect x="327" y="445.0" width="24" height="9.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="339" y="467.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">−1</text>
+<rect x="360" y="445.0" width="24" height="9.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="372" y="467.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">−1</text>
+<rect x="393" y="445.0" width="24" height="9.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="405" y="467.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">−1</text>
+<rect x="426" y="445.0" width="24" height="9.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="438" y="467.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">−1</text>
+<rect x="459" y="445.0" width="24" height="9.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="471" y="467.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">−1</text>
+<rect x="492" y="346.0" width="24" height="99.0" rx="2" fill="#EF9F27" opacity="1"/>
+<text x="504" y="341.0" font-size="11" font-weight="600" text-anchor="middle" fill="#2C2C2A">11</text>
+<rect x="525" y="445.0" width="24" height="9.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="537" y="467.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">−1</text>
+<rect x="558" y="445.0" width="24" height="9.0" rx="2" fill="#7F77DD" opacity="0.8"/>
+<text x="570" y="467.0" font-size="11" font-weight="400" text-anchor="middle" fill="#2C2C2A">−1</text>
+<line x1="323" y1="445" x2="587" y2="445" stroke="#5F5E5A" stroke-width="1"/>
+<line x1="323" y1="440.5" x2="587" y2="440.5" stroke="#D85A30" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="455" y="533" font-size="11" font-weight="400" text-anchor="middle" fill="#5F5E5A">Reflect through the mean</text>
+<rect x="610" y="285" width="280" height="255" rx="8" fill="none" stroke="#D3D1C7" stroke-width="1"/>
+<text x="622" y="307" font-size="14" font-weight="600" text-anchor="start" fill="#2C2C2A">How to read</text>
+<rect x="624" y="327" width="22" height="16" rx="2" fill="#7F77DD"/>
+<text x="658" y="339" font-size="12" font-weight="400" text-anchor="start" fill="#2C2C2A">the 7 unmarked states</text>
+<rect x="624" y="357" width="22" height="16" rx="2" fill="#EF9F27"/>
+<text x="658" y="369" font-size="12" font-weight="400" text-anchor="start" fill="#2C2C2A">101, the marked state</text>
+<rect x="624" y="387" width="22" height="16" fill="none" stroke="#888780" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="658" y="399" font-size="12" font-weight="400" text-anchor="start" fill="#2C2C2A">value before this step</text>
+<line x1="622" y1="425" x2="648" y2="425" stroke="#D85A30" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="658" y="429" font-size="12" font-weight="400" text-anchor="start" fill="#2C2C2A">the mean (dashed)</text>
+<text x="622" y="471" font-size="12" font-weight="400" text-anchor="start" fill="#5F5E5A">Bars are the amplitudes of the 8 states</text>
+<text x="622" y="489" font-size="12" font-weight="400" text-anchor="start" fill="#5F5E5A">000 … 111 (left to right); amber is 101.</text>
+<text x="622" y="507" font-size="12" font-weight="400" text-anchor="start" fill="#5F5E5A">Unit: c = 1/(8√2) ≈ 0.088.</text>
+</svg>
